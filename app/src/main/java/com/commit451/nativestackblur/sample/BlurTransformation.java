@@ -10,7 +10,7 @@ import com.squareup.picasso.Transformation;
  */
 public class BlurTransformation implements Transformation {
 
-    private int mBlurRadius;
+    private final int mBlurRadius;
 
     public BlurTransformation(int blurRadius) {
         mBlurRadius = blurRadius;

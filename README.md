@@ -3,25 +3,26 @@ Android StackBlur with gradle support (only for the native method) https://githu
 
 As you may see, kikoso has not yet provided a way to add StackBlur as a gradle dependency easily. This library is an attempt to make the NativeBlurProcess availible through gradle without the need to import any modules or do any other configuration.
 
-[![Build Status](https://travis-ci.org/Commit451/NativeStackBlur.svg?branch=master)](https://travis-ci.org/Commit451/NativeStackBlur)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-NativeStackBlur-green.svg?style=flat)](https://android-arsenal.com/details/1/2495) [![](https://jitpack.io/v/Commit451/NativeStackBlur.svg)](https://jitpack.io/#Commit451/NativeStackBlur)
+[![](https://jitpack.io/v/HearSilent/NativeStackBlur.svg)](https://jitpack.io/#HearSilent/NativeStackBlur)
 
 # Gradle Dependency
 
-Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
+Add this in your root `settings.gradle` file:
 
 ```gradle
-allprojects {
-	repositories {
-		...
-		maven { url "https://jitpack.io" }
-	}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
 }
 ```
 
 Then, add the library to your project `build.gradle`
 ```gradle
 dependencies {
-    implementation 'com.github.Commit451:NativeStackBlur:1.0.5'
+    implementation 'com.github.HearSilent:NativeStackBlur:1.0.6'
 }
 ```
 
@@ -42,16 +43,24 @@ If you want to compile the original StackBlur lib for various reasons, such as a
 License
 --------
 
-    Copyright 2020 Commit 451
+    MIT License
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+    Copyright (c) 2022 HearSilent
 
-       http://www.apache.org/licenses/LICENSE-2.0
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.

@@ -1,29 +1,28 @@
 package com.commit451.nativestackblur.sample;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.commit451.nativestackblur.sample.databinding.ActivityMainBinding;
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView mImage;
-    ImageView mBlurredImage;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mImage = (ImageView) findViewById(R.id.image);
-        mBlurredImage = (ImageView) findViewById(R.id.blurredImage);
-        Picasso.with(this)
-                .load("http://www.androidcentral.com/sites/androidcentral.com/files/styles/large/public/article_images/2014/10/lollipop-statue-2.jpg?itok=RC1ovcEz")
-                .into(mImage);
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Picasso.with(this)
-                .load("http://www.androidcentral.com/sites/androidcentral.com/files/styles/large/public/article_images/2014/10/lollipop-statue-2.jpg?itok=RC1ovcEz")
+        String url = "https://images.unsplash.com/photo-1522648485144-849409408aee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80";
+        Picasso.get()
+                .load(url)
+                .into(binding.image);
+        Picasso.get()
+                .load(url)
                 .transform(new BlurTransformation(8))
-                .into(mBlurredImage);
+                .into(binding.blurredImage);
     }
 }
