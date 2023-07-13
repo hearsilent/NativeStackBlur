@@ -6,10 +6,10 @@ android {
     compileSdkVersion 32
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 9
         targetSdkVersion 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 107
+        versionName "1.0.7"
     }
     buildTypes {
         release {

@@ -7,14 +7,15 @@ As you may see, kikoso has not yet provided a way to add StackBlur as a gradle d
 
 # Gradle Dependency
 
-Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
+Add this in your root `settings.gradle` file:
 
 ```gradle
-allprojects {
-	repositories {
-		...
-		maven { url "https://jitpack.io" }
-	}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
 }
 ```
 

@@ -8,8 +8,11 @@ android {
         applicationId "com.commit451.nativestackblur.sample"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 101
+        versionName "1.0.1"
+    }
+    buildFeatures {
+        viewBinding true
     }
     buildTypes {
         release {
